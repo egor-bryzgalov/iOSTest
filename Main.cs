@@ -1,4 +1,5 @@
-﻿using UIKit;
+﻿using System;
+using UIKit;
 
 namespace TestApp
 {
@@ -12,6 +13,8 @@ namespace TestApp
             UIApplication.Main(args, null, "AppDelegate");
 
             int value = default;
+
+            Func<string, bool> testFunc = default;
         }
     }
 }
