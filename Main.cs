@@ -1,7 +1,7 @@
 ﻿using System;
 using UIKit;
 
-namespace TestApp
+namespace TestAppleApp
 {
     public class Application
     {
@@ -12,9 +12,10 @@ namespace TestApp
             // you can specify it here.
             UIApplication.Main(args, null, "AppDelegate");
 
-            int value = default;
+            int testDefault = default;
 
-            Func<string, bool> testFunc = default;
+            Func<string, bool> testFun = default;
+
         }
     }
 }

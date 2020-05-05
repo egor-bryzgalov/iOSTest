@@ -2,7 +2,7 @@
 using System;
 using UIKit;
 
-namespace TestApp
+namespace TestAppleApp
 {
     public partial class ViewController : UIViewController
     {
