@@ -350,11 +350,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\egor.bryzgalov\\source\\repos\\App2\\App2\\App2\\App2.csproj",
+      "projectUniqueName": "D:\\Repositories\\TestiOS\\TestApp\\App2\\App2\\App2.csproj",
       "projectName": "App2",
-      "projectPath": "C:\\Users\\egor.bryzgalov\\source\\repos\\App2\\App2\\App2\\App2.csproj",
+      "projectPath": "D:\\Repositories\\TestiOS\\TestApp\\App2\\App2\\App2.csproj",
       "packagesPath": "C:\\Users\\egor.bryzgalov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\egor.bryzgalov\\source\\repos\\App2\\App2\\App2\\obj\\",
+      "outputPath": "D:\\Repositories\\TestiOS\\TestApp\\App2\\App2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
