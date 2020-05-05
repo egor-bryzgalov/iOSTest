@@ -17,6 +17,10 @@ namespace App2.iOS
             UIApplication.Main(args, null, "AppDelegate");
 
             int test = default;
+
+            Func<string, bool> testFun = default;
+
+            Console.WriteLine(test);
         }
     }
 }
