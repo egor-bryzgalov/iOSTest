@@ -30,3 +30,7 @@ steps:
     configuration: 'Release'
     buildForSimulator: true
     packageApp: false
+    runNugetRestore: true
+    clean: true
+
+
