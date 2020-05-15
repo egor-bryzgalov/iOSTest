@@ -30,3 +30,8 @@ steps:
     configuration: 'Debug'
     buildForSimulator: true
     packageApp: false
+
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: 'TestP12.p12'
+    keychain: 'temp'
