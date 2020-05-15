@@ -35,3 +35,4 @@ steps:
   inputs:
     certSecureFile: 'ia.p12'
     keychain: 'temp'
+    certPwd: test
