@@ -20,17 +20,21 @@ steps:
 
 - task: NuGetToolInstaller@1
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '**/*.sln'
+#- task: NuGetCommand@2
+ # inputs:
+  #  restoreSolution: '**/*.sln'
 
-- task: XamariniOS@2
-  inputs:
-    solutionFile: '**/*.sln'
-    configuration: 'Debug'
-    buildForSimulator: true
-    packageApp: false
+#- task: XamariniOS@2
+ # inputs:
+  #  solutionFile: '**/*.sln'
+   # configuration: 'Debug'
+    #buildForSimulator: true
+    #packageApp: false
 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'openssl version'
 - task: InstallAppleCertificate@2
   inputs:
     certSecureFile: 'ia.p12'
