@@ -33,5 +33,5 @@ steps:
 
 - task: InstallAppleCertificate@2
   inputs:
-    certSecureFile: 'TestP12.p12'
+    certSecureFile: 'ia.p12'
     keychain: 'temp'
