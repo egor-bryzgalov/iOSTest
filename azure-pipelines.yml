@@ -35,7 +35,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'openssl version'
-- task: InstallAppleCertificate@2
+
+- task: InstallAppleCertificatem@2
   inputs:
     certSecureFile: 'ia.p12'
     keychain: 'temp'
