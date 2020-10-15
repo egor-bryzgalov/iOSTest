@@ -31,10 +31,10 @@ steps:
     #buildForSimulator: true
     #packageApp: false
 
-- task: Bash@3
+- task: InstallAppleProvisioningProfile@1
   inputs:
-    targetType: 'inline'
-    script: 'openssl version'
+    provisioningProfileLocation: 'secureFiles'
+    provProfileSecureFile: 'TestAzure.mobileprovision'
 
 - task: InstallAppleCertificatem@2
   inputs:
