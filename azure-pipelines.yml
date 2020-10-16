@@ -40,12 +40,9 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ls
-      cd "~/Library"
+      usrdir=$(id -un)
+      cd "/Users/$usrdir/Library/MobileDevice/Provisioning Profiles"
       pwd
       ls
-      cd "MobileDevice"
-      ls
-      cd "~/Library/MobileDevice/Provisioning Profiles"
       security cms -D -i B5C2906D-D6EE-476E-AF17-D99AE14644AA.mobileprovision
     failOnStderr: true
