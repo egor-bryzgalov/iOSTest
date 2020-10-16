@@ -9,40 +9,34 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
-steps:
-# To manually select a Xamarin SDK version on the Microsoft-hosted macOS agent,
-# configure this task with the *Mono* version that is associated with the
-# Xamarin SDK version that you need, and set the "enabled" property to true.
-# See https://go.microsoft.com/fwlink/?linkid=871629
-- script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 5_12_0
-  displayName: 'Select the Xamarin SDK version'
-  enabled: false
+jobs:
+- job: A
+  steps:
 
-- task: NuGetToolInstaller@1
+  - task: InstallAppleProvisioningProfile@1
+    inputs:
+      provisioningProfileLocation: 'secureFiles'
+      provProfileSecureFile: 'test.mobileprovision'
 
-#- task: NuGetCommand@2
- # inputs:
-  #  restoreSolution: '**/*.sln'
-
-#- task: XamariniOS@2
- # inputs:
-  #  solutionFile: '**/*.sln'
-   # configuration: 'Debug'
-    #buildForSimulator: true
-    #packageApp: false
-
-- task: InstallAppleProvisioningProfile@1
-  inputs:
-    provisioningProfileLocation: 'secureFiles'
-    provProfileSecureFile: 'test.mobileprovision'
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      usrdir=$(id -un)
-      cd "/Users/$usrdir/Library/MobileDevice/Provisioning Profiles"
-      pwd
-      ls
-      security cms -D -i B5C2906D-D6EE-476E-AF17-D99AE14644AB.mobileprovision
-    failOnStderr: true
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        use=$(id -un)
+        cd "/Users/$usrdir/Library/MobileDevice/Provisioning Profiles"
+        pwd
+        ls
+        security cms -D -i B5C2906D-D6EE-476E-AF17-D99AE14644AB.mobileprovision
+      failOnStderr: true
+- job: B
+  steps:
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        use=$(id -un)
+        cd "/Users/$usrdir/Library/MobileDevice/Provisioning Profiles"
+        pwd
+        ls
+        security cms -D -i B5C2906D-D6EE-476E-AF17-D99AE14644AB.mobileprovision
+      failOnStderr: true
