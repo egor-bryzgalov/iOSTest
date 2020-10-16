@@ -40,7 +40,9 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      ls
       cd "~/Library"
+      pwd
       ls
       cd "MobileDevice"
       ls
