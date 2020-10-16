@@ -43,9 +43,11 @@ steps:
     keychain: 'temp'
     certPwd: test
 
-- task: Bash@3
+
+- task: XamariniOS@2
   inputs:
-    targetType: 'inline'
-    script: |
-      cd ~/Library/MobileDevice/Provisioning\ Profiles && open
-      security cms -D -i test.mobileprovision
+    solutionFile: '**/*.sln'
+    configuration: 'Release'
+    packageApp: true
+    runNugetRestore: false
+    signingProvisioningProfileID: 'B5C2906D-D6EE-476E-AF17-D99AE14644AA'
