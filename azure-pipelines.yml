@@ -34,7 +34,8 @@ steps:
 - task: InstallAppleProvisioningProfile@1
   inputs:
     provisioningProfileLocation: 'secureFiles'
-    provProfileSecureFile: 'TestAzure.mobileprovision'
+    provProfileSecureFile: 'test.mobileprovision'
+
 
 - task: InstallAppleCertificatem@2
   inputs:
