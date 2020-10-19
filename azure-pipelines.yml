@@ -9,34 +9,10 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
-jobs:
-- job: A
-  steps:
+steps:
 
-  - task: InstallAppleProvisioningProfile@1
-    inputs:
-      provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: 'test.mobileprovision'
-
-  - task: Bash@3
-    inputs:
-      targetType: 'inline'
-      script: |
-        use=$(id -un)
-        cd "/Users/$usrdir/Library/MobileDevice/Provisioning Profiles"
-        pwd
-        ls
-        security cms -D -i B5C2906D-D6EE-476E-AF17-D99AE14644AB.mobileprovision
-      failOnStderr: true
-- job: B
-  steps:
-  - task: Bash@3
-    inputs:
-      targetType: 'inline'
-      script: |
-        use=$(id -un)
-        cd "/Users/$usrdir/Library/MobileDevice/Provisioning Profiles"
-        pwd
-        ls
-        security cms -D -i B5C2906D-D6EE-476E-AF17-D99AE14644AB.mobileprovision
-      failOnStderr: true
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provisioningProfileLocation: 'secureFiles'
+    provProfileSecureFile: 'test.mobileprovision'
+    removeProfile: true
