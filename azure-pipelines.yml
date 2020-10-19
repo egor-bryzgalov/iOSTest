@@ -11,8 +11,16 @@ pool:
 
 steps:
 
-- task: InstallAppleProvisioningProfile@1
+- task: InstallAppleProvisioningProfilem@1
   inputs:
     provisioningProfileLocation: 'secureFiles'
     provProfileSecureFile: 'test.mobileprovision'
     removeProfile: true
+
+- task: Bash@3
+  displayName: "Check if provisioning profile installed"
+  inputs:
+    targetType: 'inline'
+    script: |
+      cd "$HOME/Library/MobileDevice/Provisioning Profiles"
+      security cms -D -i B5C2906D-D6EE-476E-AF17-D99AE14644AA.mobileprovision
