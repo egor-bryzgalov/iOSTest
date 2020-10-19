@@ -13,8 +13,9 @@ steps:
 
 - task: InstallAppleProvisioningProfilem@1
   inputs:
-    provisioningProfileLocation: 'secureFiles'
-    provProfileSecureFile: 'test.mobileprovision'
+    provisioningProfileLocation: 'sourceRepository'
+    #provProfileSecureFile: 'test.mobileprovision'
+    provProfileSourceRepository: 'test.mobileprovision'
     removeProfile: true
 
 - task: Bash@3
