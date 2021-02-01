@@ -12,6 +12,7 @@ pool:
 steps:
 
 - bash: |
+    mvn --version
     which mvn
 
 #- task: InstallAppleProvisioningProfilem@1
