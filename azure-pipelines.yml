@@ -6,14 +6,22 @@
 trigger:
 - master
 
+schedules:
+- cron: 3 18 * * Mon # mm HH DD MM DW
+  displayName: Localization update
+  branches:
+    include: 
+    - master
+  always: true
+
 pool:
   vmImage: 'Ubuntu-latest'
 
 steps:
 
-- bash: |
-    mvn --version
-    which mvn
+- powershell: |
+    $buildUrl = "https://$(System.TeamFoundationCollectionUri)/$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)&_a=summary"
+    echo $buildUrl
 
 #- task: InstallAppleProvisioningProfilem@1
 #  inputs:
