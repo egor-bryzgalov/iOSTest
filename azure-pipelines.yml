@@ -20,7 +20,7 @@ pool:
 steps:
 
 - powershell: |
-    $buildUrl = "https://$(System.TeamFoundationCollectionUri)/$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)&_a=summary"
+    $buildUrl = "$(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)&_a=summary"
     echo $buildUrl
 
 #- task: InstallAppleProvisioningProfilem@1
