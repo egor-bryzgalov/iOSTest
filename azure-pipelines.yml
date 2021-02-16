@@ -7,7 +7,7 @@ trigger:
 - master
 
 schedules:
-- cron: 3 18 * * Mon # mm HH DD MM DW
+- cron: 10 18 * * Mon # mm HH DD MM DW
   displayName: Localization update
   branches:
     include: 
