@@ -20,9 +20,11 @@ pool:
 steps:
 
 - powershell: |
-    $buildUrl = "$(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)&_a=summary"
-    echo $buildUrl
+    $PR_LINK="Dummy"
+    Write-Host "##vso[task.setvariable variable=PR_LINK]$PR_LINK"
 
+- powershell: |
+    echo $env:PR_LINK
 #- task: InstallAppleProvisioningProfilem@1
 #  inputs:
 #    provisioningProfileLocation: 'secureFiles'
